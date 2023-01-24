@@ -9,16 +9,16 @@ function App() {
   const token = window.localStorage.getItem("token");
 
   useEffect(() => {
-    if (token) {
-      navigate("/");
-    } else if (window.location.href == "http://127.0.0.1:5173/" && !token) {
+    if (typeof token === "string") {
+      navigate("/home");
+    } else {
       navigate("/login");
     }
   }, []);
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login name="login" />} />
       <Route path="/signup" element={<SignUp name="signup" />} />
     </Routes>

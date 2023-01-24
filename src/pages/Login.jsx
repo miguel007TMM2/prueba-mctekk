@@ -37,7 +37,7 @@ export default function Login(props) {
     localStorage.setItem("token", givenResult?.token);
     givenResult?.errors?.message
       ? alert(givenResult?.errors.message)
-      : navigate("/");
+      : navigate("/home");
   };
 
   return (
